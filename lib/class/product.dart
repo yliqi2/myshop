@@ -9,8 +9,10 @@ class Product {
   double price;
   String imgPath;
   String desc;
+  int quantity;
 
-  Product(this.id, this.name, this.price, this.imgPath, this.desc);
+  Product(
+      this.id, this.name, this.price, this.imgPath, this.desc, this.quantity);
 
   Map<String, Object?> toMap() {
     return {
@@ -18,7 +20,8 @@ class Product {
       'name': name,
       'price': price,
       'imgpath': imgPath,
-      'desc': desc
+      'desc': desc,
+      'quantity': quantity
     };
   }
 }

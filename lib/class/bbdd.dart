@@ -8,7 +8,7 @@ Future<Database> getDatabase() async {
     join(await getDatabasesPath(), 'product_db'),
     onCreate: (db, version) {
       return db.execute(
-          'CREATE TABLE product(id INTEGER PRIMARY KEY, name TEXT, price REAL, imgpath TEXT, desc TEXT)');
+          'CREATE TABLE product(id INTEGER PRIMARY KEY, name TEXT, price REAL, imgpath TEXT, desc TEXT, quantity INTEGER)');
     },
     version: 1,
   );
@@ -26,4 +26,4 @@ Future<void> initializeDatabase() async {
   await getDatabase();
 }
 
-// Future<void> 
+// función para obtener los datos 
