@@ -31,9 +31,12 @@ class _GnavState extends State<Gnav> {
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
                 },
-                icon: const Icon(
-                  Icons.menu,
-                  color: appBarTextIconColor,
+                icon: const Padding(
+                  padding: EdgeInsets.only(left: 12.0),
+                  child: Icon(
+                    Icons.menu,
+                    color: appBarTextIconColor,
+                  ),
                 ))),
       ),
       drawer: Drawer(

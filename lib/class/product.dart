@@ -7,19 +7,24 @@ class Product {
   int id;
   String name;
   double price;
-  String imgPath;
+  String imgpath;
   String desc;
   int quantity;
 
   Product(
-      this.id, this.name, this.price, this.imgPath, this.desc, this.quantity);
+      {required this.id,
+      required this.name,
+      required this.price,
+      required this.imgpath,
+      required this.desc,
+      required this.quantity});
 
   Map<String, Object?> toMap() {
     return {
       'id': id,
       'name': name,
       'price': price,
-      'imgpath': imgPath,
+      'imgpath': imgpath,
       'desc': desc,
       'quantity': quantity
     };

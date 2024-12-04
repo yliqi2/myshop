@@ -3,51 +3,69 @@ import 'package:myshop/class/product.dart';
 class Listproduct {
   final List<Product> products = [
     Product(
-        1,
-        'Luxury Sedan',
-        12000.99, // Precio actualizado para un modelo de lujo
-        'assets/images/bmw.png',
-        'A premium luxury sedan that combines elegant design, advanced technology, and exceptional performance for a truly sophisticated driving experience.',
-        0),
+      id: 1,
+      name: 'Luxury Sedan',
+      price: 12000.99,
+      imgpath: 'assets/images/bmw.png',
+      desc:
+          'A premium luxury sedan that combines elegant design, advanced technology, and exceptional performance for a truly sophisticated driving experience.',
+      quantity: 0,
+    ),
     Product(
-        2,
-        'Sport Coupe',
-        99999.50, // Precio actualizado para un coche deportivo
-        'assets/images/bmw2.png',
-        'A sleek and stylish sport coupe designed for enthusiasts. Experience thrilling speed, agile handling, and unparalleled comfort on every drive.',
-        0),
+      id: 2,
+      name: 'Sport Coupe',
+      price: 99999.50,
+      imgpath: 'assets/images/bmw2.png',
+      desc:
+          'A sleek and stylish sport coupe designed for enthusiasts. Experience thrilling speed, agile handling, and unparalleled comfort on every drive.',
+      quantity: 0,
+    ),
     Product(
-        3,
-        'Compact Hatchback',
-        29999.00, // Precio actualizado para un hatchback compacto
-        'assets/images/bmw4.png',
-        'An efficient and practical compact hatchback ideal for urban adventures. Combines modern design with excellent fuel economy.',
-        0),
+      id: 3,
+      name: 'Compact Hatchback',
+      price: 29999.00,
+      imgpath: 'assets/images/bmw4.png',
+      desc:
+          'An efficient and practical compact hatchback ideal for urban adventures. Combines modern design with excellent fuel economy.',
+      quantity: 0,
+    ),
     Product(
-        4,
-        'Classic Convertible',
-        44999.00, // Precio actualizado para un convertible clásico
-        'assets/images/bmw5.png',
-        'A timeless classic convertible that offers a perfect blend of nostalgia and modern features. Enjoy open-top driving with exceptional elegance.',
-        0),
+      id: 4,
+      name: 'Classic Convertible',
+      price: 44999.00,
+      imgpath: 'assets/images/bmw5.png',
+      desc:
+          'A timeless classic convertible that offers a perfect blend of nostalgia and modern features. Enjoy open-top driving with exceptional elegance.',
+      quantity: 0,
+    ),
   ];
 
   final List<Product> wheels = [
     Product(
-        5,
-        'Turbo 22',
-        220.0,
-        'assets/images/wheel.png',
-        'High-performance 22-inch wheels designed for speed and durability.',
-        0),
-    Product(6, 'Racing X', 240.0, 'assets/images/wheel2.png',
-        'Aerodynamic design for improved handling at high speeds.', 0),
+      id: 5,
+      name: 'Turbo 22',
+      price: 220.0,
+      imgpath: 'assets/images/wheel.png',
+      desc:
+          'High-performance 22-inch wheels designed for speed and durability.',
+      quantity: 0,
+    ),
     Product(
-        7,
-        'SportMax 18',
-        200.0,
-        'assets/images/wheel3.png',
-        'Lightweight 18-inch wheels ideal for sports cars and precision driving.',
-        0),
+      id: 6,
+      name: 'Racing X',
+      price: 240.0,
+      imgpath: 'assets/images/wheel2.png',
+      desc: 'Aerodynamic design for improved handling at high speeds.',
+      quantity: 0,
+    ),
+    Product(
+      id: 7,
+      name: 'SportMax 18',
+      price: 200.0,
+      imgpath: 'assets/images/wheel3.png',
+      desc:
+          'Lightweight 18-inch wheels ideal for sports cars and precision driving.',
+      quantity: 0,
+    ),
   ];
 }

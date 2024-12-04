@@ -20,7 +20,7 @@ Widget itemTile({required Product product}) {
           padding: const EdgeInsets.all(10.0),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.asset(product.imgPath),
+            child: Image.asset(product.imgpath),
           ),
         ),
         //desc
@@ -70,7 +70,7 @@ Widget itemTile({required Product product}) {
               GestureDetector(
                 onTap: () async {
                   await insertProduct(product);
-                  print(product.id);
+                  print('Insertado');
                 },
                 child: Container(
                   padding: const EdgeInsets.all(20),

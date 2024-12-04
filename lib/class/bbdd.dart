@@ -26,4 +26,28 @@ Future<void> initializeDatabase() async {
   await getDatabase();
 }
 
-// función para obtener los datos 
+// función para obtener los datos
+Future<List<Product>> productos() async {
+  final db = await getDatabase();
+
+  final List<Map<String, Object?>> productMap = await db.query('product');
+
+  return [
+    for (final {
+          'id': id as int,
+          'name': name as String,
+          'price': price as double,
+          'imgpath': imgpath as String,
+          'desc': desc as String,
+          'quantity': quantity as int,
+        } in productMap)
+      Product(
+        id: id,
+        name: name,
+        price: price,
+        imgpath: imgpath,
+        desc: desc,
+        quantity: quantity,
+      ),
+  ];
+}

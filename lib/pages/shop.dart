@@ -47,7 +47,7 @@ class Shop extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Rim and Wheels',
+                          'Rim & Wheels',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 25,
