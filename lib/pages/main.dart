@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myshop/components/navigationbar.dart';
 import 'package:myshop/class/bbdd.dart';
+import 'package:myshop/pages/intropage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
-      home: const Navigationbar(),
+      home: const Intropage(),
     );
   }
 }

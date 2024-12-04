@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //appbar
-const Color appBarBackgroundColor = Color(0xFF1E1E1E); //background de appbar
+const Color appbarBackground = Colors.transparent;
 const Color appBarTextIconColor = Color(0xFFEAEAEA); //icono y text
 
 //body
@@ -29,4 +29,23 @@ const Color cardHighlightColor =
     Color(0xFFFF3B3F); // Highlight for important elements
 const Color cardPriceTextColor = Color(0xFFFF3B3F); // Matches redHighlightColor
 
+//logo color title
+const Color logoTitleColor = Color(0xFFEAEAEA);
+//subtitle color
+const Color subtitleColor = Color.fromARGB(255, 133, 133, 133);
+//bottom color
+const Color bottomColor = Color.fromARGB(255, 129, 124, 124);
 
+// Drawer Colors
+const Color drawerBackgroundColor =
+    Color(0xFF1E1E1E); // Background of the drawer, matching the navBar
+const Color drawerTextColor = Color(
+    0xFFEAEAEA); // Text color inside the drawer, matching appBarTextIconColor
+const Color drawerHighlightColor =
+    Color(0xFFFF3B3F); // Highlight color for selected items
+const Color drawerIconColor =
+    Color(0xFFEAEAEA); // Icon color in the drawer, matching text color
+const Color drawerUnselectedItemColor =
+    Color(0xFF7D7D7D); // Color for unselected items
+const Color drawerDividerColor =
+    Color(0xFF393939); // Divider color between items, matching cardBorderColor
