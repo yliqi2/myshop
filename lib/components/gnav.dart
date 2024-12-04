@@ -107,6 +107,7 @@ class _GnavState extends State<Gnav> {
       backgroundColor: backgroundColor,
       body: SafeArea(child: _pages[_selectedIndex]),
       bottomNavigationBar: GNav(
+        haptic: true,
         rippleColor: navBarActiveIconColor,
         color: navBarUnselectedItemColor,
         activeColor: navBarActiveIconColor,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myshop/components/gnav.dart';
 import 'package:myshop/constant/darktheme.dart';
 
-//hola
 class Intropage extends StatelessWidget {
   const Intropage({super.key});
 

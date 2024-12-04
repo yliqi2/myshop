@@ -25,6 +25,7 @@ const Color cardShadowColor =
 const Color cardBorderColor =
     Color(0xFF393939); // Border for a slightly raised look
 const Color cardTextColor = Color(0xFFEAEAEA); // Text color for readability
+const Color cardicon = Color.fromARGB(255, 255, 255, 255); // icon
 const Color cardHighlightColor =
     Color(0xFFFF3B3F); // Highlight for important elements
 const Color cardPriceTextColor = Color(0xFFFF3B3F); // Matches redHighlightColor
@@ -45,7 +46,5 @@ const Color drawerHighlightColor =
     Color(0xFFFF3B3F); // Highlight color for selected items
 const Color drawerIconColor =
     Color(0xFFEAEAEA); // Icon color in the drawer, matching text color
-const Color drawerUnselectedItemColor =
-    Color(0xFF7D7D7D); // Color for unselected items
-const Color drawerDividerColor =
-    Color(0xFF393939); // Divider color between items, matching cardBorderColor
+
+const Color searchBarcolor = Color.fromARGB(255, 220, 220, 220);
