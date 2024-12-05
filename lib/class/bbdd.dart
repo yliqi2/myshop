@@ -27,10 +27,10 @@ Future<void> initializeDatabase() async {
 }
 
 // función para obtener los datos
-Future<List<Product>> productos() async {
+Future<List<Product>> selectProductos() async {
   final db = await getDatabase();
 
-  final List<Map<String, Object?>> productMap = await db.query('product');
+  List<Map<String, Object?>> productMap = await db.query('product');
 
   return [
     for (final {
@@ -50,4 +50,14 @@ Future<List<Product>> productos() async {
         quantity: quantity,
       ),
   ];
+}
+
+//función para eliminar una fila de la tabla productos
+Future<void> deleteProduct(int id) async {
+  final db = await getDatabase();
+  await db.delete(
+    'product',
+    where: 'id = ?',
+    whereArgs: [id],
+  );
 }

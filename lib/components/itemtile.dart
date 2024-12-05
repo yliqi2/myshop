@@ -3,7 +3,10 @@ import 'package:myshop/class/product.dart';
 import 'package:myshop/constant/darktheme.dart';
 import 'package:myshop/class/bbdd.dart';
 
-Widget itemTile({required Product product, required double width}) {
+Widget itemTile(
+    {required Product product,
+    required double width,
+    required VoidCallback onProduct}) {
   return Container(
     // decoration
     margin: const EdgeInsets.only(left: 25),
@@ -70,7 +73,7 @@ Widget itemTile({required Product product, required double width}) {
               GestureDetector(
                 onTap: () async {
                   await insertProduct(product);
-                  print('Insertado');
+                  onProduct();
                 },
                 child: Container(
                   padding: const EdgeInsets.all(20),

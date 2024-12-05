@@ -17,7 +17,7 @@ class Gnav extends StatefulWidget {
 class _GnavState extends State<Gnav> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [Shop(), const Shopcart(), const Profile()];
+  final List<Widget> _pages = [const Shop(), const Shopcart(), const Profile()];
 
   @override
   Widget build(BuildContext context) {
@@ -121,8 +121,8 @@ class _GnavState extends State<Gnav> {
         backgroundColor: navBarBackgroundColor,
         iconSize: 30,
         gap: 8,
-        tabs: const [
-          GButton(
+        tabs: [
+          const GButton(
             icon: Icons.home_rounded,
             text: 'Shop',
           ),
@@ -130,20 +130,24 @@ class _GnavState extends State<Gnav> {
             icon: Icons.shopping_bag_rounded,
             text: 'Cart',
             leading: b.Badge(
-              badgeContent: Padding(
+              badgeContent: const Padding(
                 padding: EdgeInsets.only(left: 10),
                 child: Text('3'),
               ),
-              badgeStyle: b.BadgeStyle(
+              //TODO CHANGE IF BADGE APPEARS OR NOT AND FIX THE NUMBER
+              badgeStyle: const b.BadgeStyle(
                   badgeColor: Colors.white,
                   padding: EdgeInsets.only(right: 10)),
               child: Icon(
                 Icons.shopping_bag_rounded,
+                color: _selectedIndex == 1
+                    ? navBarActiveIconColor
+                    : navBarUnselectedItemColor,
                 size: 30,
               ),
             ),
           ),
-          GButton(
+          const GButton(
             icon: Icons.person,
             text: '@yliqi_2',
             leading: CircleAvatar(

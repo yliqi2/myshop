@@ -25,7 +25,7 @@ class Intropage extends StatelessWidget {
               ),
               const SizedBox(height: 48),
               const Text(
-                'El placer de conducir',
+                'The Joy of Driving',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
@@ -33,7 +33,7 @@ class Intropage extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               const Text(
-                'La experiencia BMW, ahora al alcance de tu mano',
+                'The BMW experience, now at your fingertips',
                 style: TextStyle(fontSize: 16, color: subtitleColor),
                 textAlign: TextAlign.center,
               ),
@@ -48,7 +48,7 @@ class Intropage extends StatelessWidget {
                   padding: const EdgeInsets.all(25),
                   child: const Center(
                     child: Text(
-                      'Haz tuya la experiencia',
+                      'Make the experience yours',
                       style: TextStyle(
                           color: logoTitleColor,
                           fontWeight: FontWeight.bold,

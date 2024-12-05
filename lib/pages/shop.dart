@@ -2,12 +2,53 @@ import 'package:flutter/material.dart';
 import 'package:myshop/class/listproduct.dart';
 import 'package:myshop/components/itemtile.dart';
 import 'package:myshop/constant/darktheme.dart';
-import 'package:path/path.dart';
 
-class Shop extends StatelessWidget {
-  Shop({super.key});
+class Shop extends StatefulWidget {
+  const Shop({super.key});
 
+  @override
+  State<Shop> createState() => _ShopState();
+}
+
+class _ShopState extends State<Shop> {
   final Listproduct productList = Listproduct();
+
+  void onProduct(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: cardBackgroundColor, // Use card background color
+          title: const Text(
+            "Added to the cart!",
+            style: TextStyle(
+              color: cardTextColor, // Use the card text color for the title
+            ),
+          ),
+          content: const Text(
+            "The product has been successfully added to your cart.",
+            style: TextStyle(
+              color: primaryTextColor, // Use primary text color for the content
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text(
+                "OK",
+                style: TextStyle(
+                  color:
+                      cardHighlightColor, // Use the red highlight color for the button
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +132,11 @@ class Shop extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                         horizontal:
                             index == productList.wheels.length - 1 ? 20 : 10.0),
-                    child: itemTile(product: product, width: widthItem),
+                    child: itemTile(
+                      product: product,
+                      width: widthItem,
+                      onProduct: () => onProduct(context),
+                    ),
                   );
                 },
               ),
@@ -140,7 +185,11 @@ class Shop extends StatelessWidget {
                   final product = productList.products[index];
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 25.0),
-                    child: itemTile(product: product, width: widthItem),
+                    child: itemTile(
+                      product: product,
+                      width: widthItem,
+                      onProduct: () => onProduct(context),
+                    ),
                   );
                 },
                 childCount: productList.products.length,
