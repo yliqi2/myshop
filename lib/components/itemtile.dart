@@ -3,11 +3,11 @@ import 'package:myshop/class/product.dart';
 import 'package:myshop/constant/darktheme.dart';
 import 'package:myshop/class/bbdd.dart';
 
-Widget itemTile({required Product product}) {
+Widget itemTile({required Product product, required double width}) {
   return Container(
     // decoration
     margin: const EdgeInsets.only(left: 25),
-    width: 300,
+    width: width,
     decoration: BoxDecoration(
         color: cardBackgroundColor,
         borderRadius: BorderRadius.circular(12),

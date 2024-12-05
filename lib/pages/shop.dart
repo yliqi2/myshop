@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myshop/class/listproduct.dart';
 import 'package:myshop/components/itemtile.dart';
 import 'package:myshop/constant/darktheme.dart';
+import 'package:path/path.dart';
 
 class Shop extends StatelessWidget {
   Shop({super.key});
@@ -10,6 +11,8 @@ class Shop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    final widthItem = screenWidth * 0.625;
     return Scaffold(
       backgroundColor: backgroundColor,
       body: CustomScrollView(
@@ -88,7 +91,7 @@ class Shop extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                         horizontal:
                             index == productList.wheels.length - 1 ? 20 : 10.0),
-                    child: itemTile(product: product),
+                    child: itemTile(product: product, width: widthItem),
                   );
                 },
               ),
@@ -137,7 +140,7 @@ class Shop extends StatelessWidget {
                   final product = productList.products[index];
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 25.0),
-                    child: itemTile(product: product),
+                    child: itemTile(product: product, width: widthItem),
                   );
                 },
                 childCount: productList.products.length,
