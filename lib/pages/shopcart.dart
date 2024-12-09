@@ -5,7 +5,8 @@ import 'package:myshop/class/shoppingcart.dart';
 import 'package:myshop/components/cartile.dart';
 
 class Shopcart extends StatefulWidget {
-  const Shopcart({super.key});
+  final VoidCallback onUpdate;
+  const Shopcart({super.key, required this.onUpdate});
 
   @override
   State<Shopcart> createState() => _ShopcartState();
@@ -26,12 +27,8 @@ class _ShopcartState extends State<Shopcart> {
     setState(() {
       updatedList = fetchedList;
     });
-  }
 
-  void _delete() async {
-    List<Product> updatedList = await fetchListFromDatabase();
-    removeProduct(updatedList, updatedList.first);
-    loadCart();
+    widget.onUpdate();
   }
 
   @override
@@ -86,7 +83,8 @@ class _ShopcartState extends State<Shopcart> {
                               bottom: 25, top: index == 0 ? 25 : 0),
                           child: cartTile(
                             product: updatedList[index],
-                            onUpdate: loadCart,
+                            onUpdate:
+                                loadCart, // Llamamos al callback para actualizar
                           ),
                         ),
                       ),

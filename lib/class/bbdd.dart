@@ -1,7 +1,6 @@
 import 'package:myshop/class/product.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:myshop/components/gnav.dart';
 
 // creating the database using path and sqflite
 Future<Database> getDatabase() async {

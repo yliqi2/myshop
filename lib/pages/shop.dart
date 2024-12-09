@@ -4,7 +4,8 @@ import 'package:myshop/components/itemtile.dart';
 import 'package:myshop/constant/darktheme.dart';
 
 class Shop extends StatefulWidget {
-  const Shop({super.key});
+  final VoidCallback onUpdate;
+  const Shop({super.key, required this.onUpdate});
 
   @override
   State<Shop> createState() => _ShopState();
@@ -35,6 +36,7 @@ class _ShopState extends State<Shop> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
+                widget.onUpdate();
               },
               child: const Text(
                 "OK",
