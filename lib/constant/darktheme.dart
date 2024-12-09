@@ -19,7 +19,9 @@ const Color navBarUnselectedItemColor =
     Color(0xFF7D7D7D); // Íconos y texto no seleccionados
 
 // Card Colors
-const Color cardBackgroundColor = Color(0xFF2E2E2E); // Background of the card
+const Color cardBackgroundColor = Color(0xFF2E2E2E);
+const Color cardSubBackground =
+    Color.fromARGB(255, 210, 210, 210); // Background of the card
 const Color cardShadowColor =
     Color.fromARGB(50, 0, 0, 0); // Subtle shadow for depth
 const Color cardBorderColor =

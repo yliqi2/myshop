@@ -72,7 +72,7 @@ Widget itemTile(
               //add button
               GestureDetector(
                 onTap: () async {
-                  await insertProduct(product);
+                  await insertOrUpdateProduct(product);
                   onProduct();
                 },
                 child: Container(

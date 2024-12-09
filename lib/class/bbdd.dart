@@ -14,11 +14,26 @@ Future<Database> getDatabase() async {
   );
 }
 
-//función para insertar
-Future<void> insertProduct(Product product) async {
+// Función para insertar o actualizar un producto
+Future<void> insertOrUpdateProduct(Product product) async {
   final db = await getDatabase();
-  await db.insert('product', product.toMap(),
-      conflictAlgorithm: ConflictAlgorithm.replace);
+
+  await db.rawInsert('''
+    INSERT INTO product (id, name, price, imgpath, desc, quantity)
+    VALUES (?, ?, ?, ?, ?, 1)
+    ON CONFLICT(id) DO UPDATE SET
+      name = excluded.name,
+      price = excluded.price,
+      imgpath = excluded.imgpath,
+      desc = excluded.desc,
+      quantity = product.quantity + 1
+  ''', [
+    product.id,
+    product.name,
+    product.price,
+    product.imgpath,
+    product.desc,
+  ]);
 }
 
 //función para iniciar la base de datos
@@ -60,4 +75,15 @@ Future<void> deleteProduct(int id) async {
     where: 'id = ?',
     whereArgs: [id],
   );
+}
+
+//funcion para devolver true or false
+Future<bool> isProductInCart(int productId) async {
+  final db = await getDatabase();
+  final List<Map<String, dynamic>> result = await db.query(
+    'product',
+    where: 'id = ?',
+    whereArgs: [productId],
+  );
+  return result.isNotEmpty; // Retorna true si el producto ya existe.
 }

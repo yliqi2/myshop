@@ -18,29 +18,28 @@ class _ShopState extends State<Shop> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: cardBackgroundColor, // Use card background color
+          backgroundColor: cardBackgroundColor,
           title: const Text(
-            "Added to the cart!",
+            "Cart Update",
             style: TextStyle(
-              color: cardTextColor, // Use the card text color for the title
+              color: cardTextColor,
             ),
           ),
           content: const Text(
-            "The product has been successfully added to your cart.",
+            'The product has been added to your cart or the quantity has been updated.',
             style: TextStyle(
-              color: primaryTextColor, // Use primary text color for the content
+              color: primaryTextColor,
             ),
           ),
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
+                Navigator.of(context).pop();
               },
               child: const Text(
                 "OK",
                 style: TextStyle(
-                  color:
-                      cardHighlightColor, // Use the red highlight color for the button
+                  color: cardHighlightColor,
                 ),
               ),
             ),
@@ -122,7 +121,7 @@ class _ShopState extends State<Shop> {
           // Horizontal List wheels
           SliverToBoxAdapter(
             child: SizedBox(
-              height: 450,
+              height: 430,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: productList.wheels.length,

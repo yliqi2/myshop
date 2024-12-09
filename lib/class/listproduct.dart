@@ -4,7 +4,7 @@ class Listproduct {
   final List<Product> products = [
     Product(
       id: 1,
-      name: 'Luxury Sedan',
+      name: 'BMW 7 Series',
       price: 12000.99,
       imgpath: 'assets/images/bmw.png',
       desc:
@@ -13,7 +13,7 @@ class Listproduct {
     ),
     Product(
       id: 2,
-      name: 'Sport Coupe',
+      name: 'BMW M4',
       price: 99999.50,
       imgpath: 'assets/images/bmw2.png',
       desc:
@@ -22,7 +22,7 @@ class Listproduct {
     ),
     Product(
       id: 3,
-      name: 'Compact Hatchback',
+      name: 'BMW 3 Series',
       price: 29999.00,
       imgpath: 'assets/images/bmw4.png',
       desc:
@@ -31,7 +31,7 @@ class Listproduct {
     ),
     Product(
       id: 4,
-      name: 'Classic Convertible',
+      name: 'BMW Z4',
       price: 44999.00,
       imgpath: 'assets/images/bmw5.png',
       desc:
