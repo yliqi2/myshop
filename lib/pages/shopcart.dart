@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myshop/class/product.dart';
 import 'package:myshop/constant/darktheme.dart';
 import 'package:myshop/class/shoppingcart.dart';
-import 'package:myshop/components/shopcartitemtile.dart';
+import 'package:myshop/components/cartile.dart';
 
 class Shopcart extends StatefulWidget {
   const Shopcart({super.key});
@@ -26,15 +26,6 @@ class _ShopcartState extends State<Shopcart> {
     setState(() {
       updatedList = fetchedList;
     });
-
-    if (updatedList.isEmpty) {
-      print('empty');
-    }
-
-    for (var product in updatedList) {
-      print(
-          'ID: ${product.id}, Name: ${product.name}, Price: ${product.price}, Quantity: ${product.quantity}');
-    }
   }
 
   void _delete() async {
@@ -93,7 +84,10 @@ class _ShopcartState extends State<Shopcart> {
                         itemBuilder: (context, index) => Padding(
                           padding: EdgeInsets.only(
                               bottom: 25, top: index == 0 ? 25 : 0),
-                          child: cartTile(product: updatedList[index]),
+                          child: cartTile(
+                            product: updatedList[index],
+                            onUpdate: loadCart,
+                          ),
                         ),
                       ),
                     ),

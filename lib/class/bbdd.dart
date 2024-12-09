@@ -1,8 +1,9 @@
 import 'package:myshop/class/product.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:myshop/components/gnav.dart';
 
-//función para crear la tabla y iniciar la tabla
+// creating the database using path and sqflite
 Future<Database> getDatabase() async {
   return openDatabase(
     join(await getDatabasesPath(), 'product_db'),
@@ -14,7 +15,7 @@ Future<Database> getDatabase() async {
   );
 }
 
-// Función para insertar o actualizar un producto
+// insert and handle the btn get pressed multiple times of the product to add to the cart
 Future<void> insertOrUpdateProduct(Product product) async {
   final db = await getDatabase();
 
@@ -36,12 +37,12 @@ Future<void> insertOrUpdateProduct(Product product) async {
   ]);
 }
 
-//función para iniciar la base de datos
+//initialize the database
 Future<void> initializeDatabase() async {
   await getDatabase();
 }
 
-// función para obtener los datos
+//funtion to get a list from the database of the objects products
 Future<List<Product>> selectProductos() async {
   final db = await getDatabase();
 
@@ -67,7 +68,7 @@ Future<List<Product>> selectProductos() async {
   ];
 }
 
-//función para eliminar una fila de la tabla productos
+//funtion to delete the product from the database
 Future<void> deleteProduct(int id) async {
   final db = await getDatabase();
   await db.delete(
@@ -77,13 +78,53 @@ Future<void> deleteProduct(int id) async {
   );
 }
 
-//funcion para devolver true or false
-Future<bool> isProductInCart(int productId) async {
+//function to add and decrease de amount of the product
+Future<void> decreaseOrAugmentProduct(int id, int action) async {
   final db = await getDatabase();
-  final List<Map<String, dynamic>> result = await db.query(
+
+  final List<Map<String, Object?>> result = await db.query(
     'product',
+    columns: ['quantity'],
     where: 'id = ?',
-    whereArgs: [productId],
+    whereArgs: [id],
   );
-  return result.isNotEmpty; // Retorna true si el producto ya existe.
+
+  if (result.isNotEmpty) {
+    int valor = result.first['quantity'] as int;
+
+    if (action == 0) {
+      if (valor > 1) {
+        await db.update(
+          'product',
+          {'quantity': valor - 1},
+          where: 'id = ?',
+          whereArgs: [id],
+        );
+      } else {
+        await deleteProduct(id);
+      }
+    } else {
+      await db.update(
+        'product',
+        {'quantity': valor + 1},
+        where: 'id = ?',
+        whereArgs: [id],
+      );
+    }
+  }
+}
+
+//function to get sum of quantity
+Future<int> getTotalQuantity() async {
+  final db = await getDatabase();
+
+  final List<Map<String, Object?>> result = await db.rawQuery('''
+    SELECT SUM(quantity) as totalQuantity FROM product
+  ''');
+
+  if (result.isNotEmpty && result.first['totalQuantity'] != null) {
+    return result.first['totalQuantity'] as int;
+  }
+
+  return 0;
 }

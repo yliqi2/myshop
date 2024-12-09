@@ -6,6 +6,7 @@ import 'package:myshop/pages/intropage.dart';
 import 'package:myshop/pages/profile.dart';
 import 'package:myshop/pages/shop.dart';
 import 'package:myshop/pages/shopcart.dart';
+import 'package:myshop/class/bbdd.dart';
 
 class Gnav extends StatefulWidget {
   const Gnav({super.key});
@@ -19,6 +20,10 @@ class _GnavState extends State<Gnav> {
 
   final List<Widget> _pages = [const Shop(), const Shopcart(), const Profile()];
 
+  Future<int> getBadgeCount() async {
+    return await getTotalQuantity();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,17 +32,19 @@ class _GnavState extends State<Gnav> {
         elevation: 0,
         scrolledUnderElevation: 0,
         leading: Builder(
-            builder: (context) => IconButton(
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-                icon: const Padding(
-                  padding: EdgeInsets.only(left: 12.0),
-                  child: Icon(
-                    Icons.menu,
-                    color: appBarTextIconColor,
-                  ),
-                ))),
+          builder: (context) => IconButton(
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+            icon: const Padding(
+              padding: EdgeInsets.only(left: 12.0),
+              child: Icon(
+                Icons.menu,
+                color: appBarTextIconColor,
+              ),
+            ),
+          ),
+        ),
       ),
       drawer: Drawer(
         backgroundColor: drawerBackgroundColor,
@@ -120,7 +127,7 @@ class _GnavState extends State<Gnav> {
         tabBorderRadius: 20,
         backgroundColor: navBarBackgroundColor,
         iconSize: 30,
-        gap: 8,
+        gap: 16,
         tabs: [
           const GButton(
             icon: Icons.home_rounded,
@@ -129,22 +136,38 @@ class _GnavState extends State<Gnav> {
           GButton(
             icon: Icons.shopping_bag_rounded,
             text: 'Cart',
-            leading: b.Badge(
-              badgeContent: const Padding(
-                padding: EdgeInsets.only(left: 10),
-                child: Text('3'),
-              ),
-              //TODO CHANGE IF BADGE APPEARS OR NOT AND FIX THE NUMBER
-              badgeStyle: const b.BadgeStyle(
-                  badgeColor: Colors.white,
-                  padding: EdgeInsets.only(right: 10)),
-              child: Icon(
-                Icons.shopping_bag_rounded,
-                color: _selectedIndex == 1
-                    ? navBarActiveIconColor
-                    : navBarUnselectedItemColor,
-                size: 30,
-              ),
+            leading: FutureBuilder<int>(
+              future: getBadgeCount(),
+              builder: (context, snapshot) {
+                final badgeCount = snapshot.data ?? 0;
+                return b.Badge(
+                  badgeContent: badgeCount > 0
+                      ? Text(
+                          badgeCount < 10
+                              ? ' $badgeCount '
+                              : badgeCount > 99
+                                  ? '+99'
+                                  : badgeCount.toString(),
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      : null,
+                  showBadge: badgeCount > 0,
+                  badgeStyle: const b.BadgeStyle(
+                    badgeColor: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 2, vertical: 5),
+                  ),
+                  child: Icon(
+                    Icons.shopping_bag_rounded,
+                    color: _selectedIndex == 1
+                        ? navBarActiveIconColor
+                        : navBarUnselectedItemColor,
+                    size: 30,
+                  ),
+                );
+              },
             ),
           ),
           const GButton(
