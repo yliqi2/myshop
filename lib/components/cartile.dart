@@ -3,7 +3,11 @@ import 'package:myshop/class/bbdd.dart';
 import 'package:myshop/class/product.dart';
 import 'package:myshop/constant/darktheme.dart';
 
-Widget cartTile({required Product product, required VoidCallback onUpdate}) {
+Widget cartTile(
+    {required Product product,
+    required VoidCallback onUpdate,
+    required double width,
+    required double height}) {
   return Container(
     decoration: BoxDecoration(
       color: cardBackgroundColor,
@@ -26,8 +30,8 @@ Widget cartTile({required Product product, required VoidCallback onUpdate}) {
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
                     product.imgpath,
-                    width: product.id < 5 ? 175 : 120,
-                    height: 125,
+                    width: product.id < 5 ? width * 0.36 : width * 0.25,
+                    height: width * 0.35,
                   ),
                 ),
               ),
@@ -78,10 +82,11 @@ Widget cartTile({required Product product, required VoidCallback onUpdate}) {
                         borderRadius: BorderRadius.circular(5),
                         border: Border.all(color: cardHighlightColor),
                       ),
+                      padding: const EdgeInsets.all(5),
                       child: const Icon(
                         Icons.delete,
                         color: cardicon,
-                        size: 35,
+                        size: 25,
                       ),
                     ),
                   ),
@@ -100,10 +105,11 @@ Widget cartTile({required Product product, required VoidCallback onUpdate}) {
                           borderRadius: BorderRadius.circular(5),
                           border: Border.all(color: cardHighlightColor),
                         ),
+                        padding: const EdgeInsets.all(5),
                         child: const Icon(
                           Icons.remove,
                           color: cardicon,
-                          size: 35,
+                          size: 25,
                         ),
                       ),
                     ),
@@ -137,10 +143,11 @@ Widget cartTile({required Product product, required VoidCallback onUpdate}) {
                           borderRadius: BorderRadius.circular(5),
                           border: Border.all(color: cardHighlightColor),
                         ),
+                        padding: const EdgeInsets.all(5),
                         child: const Icon(
                           Icons.add,
                           color: cardicon,
-                          size: 35,
+                          size: 25,
                         ),
                       ),
                     ),

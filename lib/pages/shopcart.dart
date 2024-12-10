@@ -37,6 +37,7 @@ class _ShopcartState extends State<Shopcart> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Padding(
@@ -86,9 +87,10 @@ class _ShopcartState extends State<Shopcart> {
                           padding: EdgeInsets.only(
                               bottom: 25, top: index == 0 ? 25 : 0),
                           child: cartTile(
-                            product: updatedList[index],
-                            onUpdate: loadCart,
-                          ),
+                              product: updatedList[index],
+                              onUpdate: loadCart,
+                              width: width,
+                              height: width),
                         ),
                       ),
                     ),
@@ -131,7 +133,7 @@ class _ShopcartState extends State<Shopcart> {
                           color: redHighlightColor,
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        padding: const EdgeInsets.all(20),
+                        padding: const EdgeInsets.all(12.5),
                         child: const Center(
                           child: Text(
                             'CHECKOUT',
