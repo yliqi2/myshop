@@ -8,7 +8,7 @@ Widget cartTile({required Product product, required VoidCallback onUpdate}) {
     decoration: BoxDecoration(
       color: cardBackgroundColor,
       borderRadius: BorderRadius.circular(12),
-      border: Border.all(color: cardBorderColor),
+      border: Border.all(color: cardBorderColor, width: 2),
     ),
     child: Padding(
       padding: const EdgeInsets.only(right: 25.0),
@@ -27,6 +27,7 @@ Widget cartTile({required Product product, required VoidCallback onUpdate}) {
                   child: Image.asset(
                     product.imgpath,
                     width: product.id < 5 ? 175 : 120,
+                    height: 125,
                   ),
                 ),
               ),

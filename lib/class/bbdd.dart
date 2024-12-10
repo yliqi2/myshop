@@ -41,7 +41,7 @@ Future<void> initializeDatabase() async {
   await getDatabase();
 }
 
-//funtion to get a list from the database of the objects products
+//function to get a list from the database of the objects products
 Future<List<Product>> selectProductos() async {
   final db = await getDatabase();
 
@@ -67,7 +67,7 @@ Future<List<Product>> selectProductos() async {
   ];
 }
 
-//funtion to delete the product from the database
+//function to delete the product from the database
 Future<void> deleteProduct(int id) async {
   final db = await getDatabase();
   await db.delete(
@@ -126,4 +126,19 @@ Future<int> getTotalQuantity() async {
   }
 
   return 0;
+}
+
+//function to get the total of the price in the cart
+Future<double> getTotalPrice() async {
+  final db = await getDatabase();
+
+  final List<Map<String, Object?>> result = await db.rawQuery('''
+    SELECT SUM(price*quantity) AS totalPrice FROM product
+    ''');
+
+  if (result.isNotEmpty && result.first['totalPrice'] != null) {
+    return result.first['totalPrice'] as double;
+  }
+
+  return 0.0;
 }
