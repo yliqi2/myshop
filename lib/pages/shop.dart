@@ -17,6 +17,7 @@ class _ShopState extends State<Shop> {
   void onProduct(BuildContext context) {
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: cardBackgroundColor,
