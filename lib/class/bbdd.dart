@@ -77,6 +77,14 @@ Future<void> deleteProduct(int id) async {
   );
 }
 
+//delete everything
+Future<void> deleteAllProduct() async {
+  final db = await getDatabase();
+  await db.delete(
+    'product',
+  );
+}
+
 //function to add and decrease de amount of the product
 Future<void> decreaseOrAugmentProduct(int id, int action) async {
   final db = await getDatabase();

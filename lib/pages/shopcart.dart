@@ -4,6 +4,7 @@ import 'package:myshop/class/product.dart';
 import 'package:myshop/constant/darktheme.dart';
 import 'package:myshop/class/shoppingcart.dart';
 import 'package:myshop/components/cartile.dart';
+import 'package:slide_to_act/slide_to_act.dart';
 
 class Shopcart extends StatefulWidget {
   final VoidCallback onUpdate;
@@ -33,6 +34,49 @@ class _ShopcartState extends State<Shopcart> {
     });
 
     widget.onUpdate();
+  }
+
+  void onBuy() async {
+    await deleteAllProduct();
+    loadCart();
+  }
+
+  onCheckout() async {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: cardBackgroundColor,
+          title: const Text(
+            'Payment Successful',
+            style: TextStyle(
+              color: cardTextColor,
+            ),
+          ),
+          content: const Text(
+            'Your payment has been processed successfully.',
+            style: TextStyle(
+              color: primaryTextColor,
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                onBuy();
+              },
+              child: const Text(
+                "OK",
+                style: TextStyle(
+                  color: cardHighlightColor,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -126,25 +170,19 @@ class _ShopcartState extends State<Shopcart> {
                         ],
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: redHighlightColor,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        padding: const EdgeInsets.all(12.5),
-                        child: const Center(
-                          child: Text(
-                            'CHECKOUT',
-                            style: TextStyle(
-                                color: logoTitleColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 22),
-                          ),
-                        ),
-                      ),
-                    ),
+                    SlideAction(
+                      borderRadius: 12,
+                      elevation: 0,
+                      innerColor: Colors.white,
+                      outerColor: redHighlightColor,
+                      text: 'SLIDE TO PAY',
+                      textStyle: const TextStyle(
+                          color: logoTitleColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22),
+                      sliderRotate: false,
+                      onSubmit: () => onCheckout(),
+                    )
                   ],
                 ),
               ),

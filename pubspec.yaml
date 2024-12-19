@@ -39,6 +39,8 @@ dependencies:
   path: ^1.9.0
   google_nav_bar: ^5.0.7
   badges: ^3.1.2
+  slide_to_act: ^2.0.2
+
 
 dev_dependencies:
   flutter_test:
