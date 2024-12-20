@@ -17,37 +17,32 @@ class Gnav extends StatefulWidget {
 
 class _GnavState extends State<Gnav> {
   int _selectedIndex = 0;
-  int _badgeCount = 0; // Guardar la cantidad del carrito
+  int _badgeCount = 0;
 
-  // Remove const to allow dynamic initialization
   late final List<Widget> _pages;
 
   @override
   void initState() {
     super.initState();
-    // Initialize _pages after the class is constructed
     _pages = [
       Shop(
         onUpdate: updateBadgeCount,
       ),
       Shopcart(
-        onUpdate:
-            updateBadgeCount, // Pasamos el callback para actualizar el contador
+        onUpdate: updateBadgeCount,
       ),
       const Profile()
     ];
   }
 
-  // Método para obtener el total de productos en el carrito
   Future<int> getBadgeCount() async {
-    return await getTotalQuantity(); // Deberías tener la lógica de cómo obtener este total
+    return await getTotalQuantity();
   }
 
-  // Función que actualiza el estado del carrito (cuando se añade, elimina o cambia cantidad)
   void updateBadgeCount() {
     getBadgeCount().then((count) {
       setState(() {
-        _badgeCount = count; // Actualizar el contador
+        _badgeCount = count;
       });
     });
   }
@@ -167,8 +162,7 @@ class _GnavState extends State<Gnav> {
             leading: FutureBuilder<int>(
               future: getBadgeCount(),
               builder: (context, snapshot) {
-                final badgeCount = snapshot.data ??
-                    _badgeCount; // Usar el _badgeCount que se actualiza
+                final badgeCount = snapshot.data ?? _badgeCount;
                 return b.Badge(
                   badgeContent: badgeCount > 0
                       ? Text(

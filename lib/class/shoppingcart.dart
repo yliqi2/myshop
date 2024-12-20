@@ -3,7 +3,7 @@ import 'package:myshop/class/bbdd.dart';
 
 //obtener lista
 Future<List<Product>> fetchListFromDatabase() async {
-  return await selectProductos(); // Asigna los productos desde la base de datos a `productList`
+  return await selectProductos();
 }
 
 //eliminar objetos

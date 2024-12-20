@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myshop/components/gnav.dart';
+import 'package:myshop/pages/gnav.dart';
 import 'package:myshop/constant/darktheme.dart';
 
 class Intropage extends StatelessWidget {
