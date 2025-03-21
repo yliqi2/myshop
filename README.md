@@ -34,6 +34,31 @@ To get started with MyShop, follow these steps:
     flutter run
     ```
 
+## 📂 Project Structure
+
+```
+myshop/
+├── lib/
+│   ├── class/
+│   │   ├── bbdd.dart
+│   │   ├── listproduct.dart
+│   │   ├── product.dart
+│   │   ├── shoppingcart.dart
+│   ├── components/
+│   │   ├── cartile.dart
+│   │   ├── itemtile.dart
+│   ├── constant/
+│   │   ├── darktheme.dart
+│   ├── pages/
+│   │   ├── gnav.dart
+│   │   ├── intropage.dart
+│   │   ├── profile.dart
+│   │   ├── shop.dart
+│   │   ├── shopcart.dart
+│   ├── main.dart
+├── pubspec.yaml
+```
+
 ## 📸 Screenshots
 
 <p align="center">
