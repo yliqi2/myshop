@@ -31,6 +31,8 @@ To get started with MyShop, follow these steps:
     flutter run
     ```
 
+> **Warning**: This application is a prototype and is intended for demonstration purposes only. It is not a fully functional e-commerce application. Additionally, due to the use of certain packages, it can only be executed on mobile devices.
+
 ## Screenshots
 
 ![Home Screen](screenshots/home.png)
