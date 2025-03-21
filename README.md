@@ -37,15 +37,11 @@ To get started with MyShop, follow these steps:
 ![Product Details](screenshots/product_details.png)
 ![Shopping Cart](screenshots/cart.png)
 
-## Contributing
-
-We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
-
 ## Resources
 
 - [Flutter Documentation](https://docs.flutter.dev/)
 - [Dart Language](https://dart.dev/)
 
-For any questions or support, please open an issue or contact us at support@myshop.com.
+For any questions or support, please open an issue or contact us at 1871649909yang@gmail.com.
 
 Happy Shopping!
