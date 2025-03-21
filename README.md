@@ -1,16 +1,19 @@
 # MyShop
-> **Warning**: This application is a prototype and is intended for demonstration purposes only. It is not a fully functional e-commerce application. Additionally, due to the use of certain packages, it can only be executed on mobile devices.
-Welcome to **MyShop**, a Flutter-based e-commerce application designed to provide a seamless shopping experience. This project showcases a modern and intuitive interface for browsing and purchasing products.
 
-## Features
+> **⚠️ WARNING:** 🚨
+> **<span style="color:red;">This application is a prototype and is intended for demonstration purposes only. It is not a fully functional e-commerce application. Additionally, due to the use of certain packages, it can only be executed on mobile devices.</span>** 🚨
 
-- **Product Browsing**: Explore a wide range of products with detailed descriptions and images.
-- **Shopping Cart**: Add products to your cart and manage quantities effortlessly.
-- **Checkout**: Secure and straightforward checkout process.
-- **Search Functionality**: Quickly find products using the search bar.
-- **Responsive Design**: Optimized for both mobile and tablet devices.
+Welcome to **MyShop** 🛍️, a Flutter-based e-commerce application designed to provide a seamless shopping experience. This project showcases a modern and intuitive interface for browsing and purchasing products.
 
-## Getting Started
+## ✨ Features
+
+- 🛒 **Product Browsing**: Explore a wide range of products with detailed descriptions and images.
+- 🛍️ **Shopping Cart**: Add products to your cart and manage quantities effortlessly.
+- 🔒 **Checkout**: Secure and straightforward checkout process.
+- 🔎 **Search Functionality**: Quickly find products using the search bar.
+- 📱 **Responsive Design**: Optimized for both mobile and tablet devices.
+
+## 🚀 Getting Started
 
 To get started with MyShop, follow these steps:
 
@@ -30,17 +33,31 @@ To get started with MyShop, follow these steps:
     ```sh
     flutter run
     ```
-## Screenshots
 
-![Home Screen](screenshots/home.png)
-![Product Details](screenshots/product_details.png)
-![Shopping Cart](screenshots/cart.png)
+## 📸 Screenshots
 
-## Resources
+<p align="center">
+  <img src="https://github.com/yliqi2/myshop/blob/main/result/home.jpg" alt="Shop Screenshot 1" width="250" />
+  <img src="https://github.com/yliqi2/myshop/blob/main/result/profile.jpg" alt="Profile Screenshot 2" width="250" />
+  <img src="https://github.com/yliqi2/myshop/blob/main/result/shopcart.jpg" alt="Shop Cart Screenshot 3" width="250" />
+</p>
 
-- [Flutter Documentation](https://docs.flutter.dev/)
-- [Dart Language](https://dart.dev/)
+## 📚 Resources
 
-For any questions or support, please open an issue or contact us at 1871649909yang@gmail.com.
+- 📖 [Flutter Documentation](https://docs.flutter.dev/)
+- 🎯 [Dart Language](https://dart.dev/)
 
-Happy Shopping!
+For any questions or support, please open an issue or contact us at 📩 1871649909yang@gmail.com.
+
+Happy Shopping! 🛒🎉
+
+## 📝 Download
+<p align="right">
+  <a href="https://github.com/yliqi2/myshop/releases/tag/v1.1" target="_blank">
+    <img src="https://img.shields.io/badge/Download-MyShop%20App-blue?style=for-the-badge&logo=flutter" alt="Download Button">
+  </a>
+</p>
+
+## 👤 Author
+
+[![yliqi2 GitHub](https://img.shields.io/badge/Visit%20yliqi2%20on%20GitHub-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yliqi2)
