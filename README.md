@@ -72,7 +72,7 @@ myshop/
 - 📖 [Flutter Documentation](https://docs.flutter.dev/)
 - 🎯 [Dart Language](https://dart.dev/)
 
-For any questions or support, please open an issue or contact us at 📩 1871649909yang@gmail.com.
+For any questions or support, please open an issue or contact me at 📩 1871649909yang@gmail.com.
 
 Happy Shopping! 🛒🎉
 
