@@ -19,7 +19,7 @@ To get started with MyShop, follow these steps:
 
 1. **Clone the Repository**:
     ```sh
-    git clone https://github.com/yourusername/myshop.git
+    git clone https://github.com/yliqi2/myshop.git
     ```
 2. **Navigate to the Project Directory**:
     ```sh
