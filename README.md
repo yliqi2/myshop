@@ -1,5 +1,5 @@
 # MyShop
-
+> **Warning**: This application is a prototype and is intended for demonstration purposes only. It is not a fully functional e-commerce application. Additionally, due to the use of certain packages, it can only be executed on mobile devices.
 Welcome to **MyShop**, a Flutter-based e-commerce application designed to provide a seamless shopping experience. This project showcases a modern and intuitive interface for browsing and purchasing products.
 
 ## Features
@@ -30,9 +30,6 @@ To get started with MyShop, follow these steps:
     ```sh
     flutter run
     ```
-
-> **Warning**: This application is a prototype and is intended for demonstration purposes only. It is not a fully functional e-commerce application. Additionally, due to the use of certain packages, it can only be executed on mobile devices.
-
 ## Screenshots
 
 ![Home Screen](screenshots/home.png)
