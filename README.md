@@ -78,7 +78,7 @@ Happy Shopping! 🛒🎉
 
 ## 📝 Download
 <p align="right">
-  <a href="https://github.com/yliqi2/myshop/releases/tag/v1.1" target="_blank">
+  <a href="https://github.com/yliqi2/myshop/releases/tag/v1.0" target="_blank">
     <img src="https://img.shields.io/badge/Download-MyShop%20App-blue?style=for-the-badge&logo=flutter" alt="Download Button">
   </a>
 </p>
